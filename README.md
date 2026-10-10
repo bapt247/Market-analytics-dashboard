@@ -1,31 +1,32 @@
-# Multi-Asset Market Analytics & Risk Dashboard
+# Multi-Asset Market Analytics \& Risk Dashboard
 
 Interactive Streamlit dashboard that analyses performance, volatility and correlations across French equities, an equity index and gold.
 
-![Dashboard overview](screenshots/overview.png)
+!\[Dashboard overview](screenshots/overview.png)
 
 <!-- Optional: add a live link once deployed on Streamlit Community Cloud -->
-<!-- **Live demo:** https://your-app.streamlit.app -->
+
+<!-- \*\*Live demo:\*\* https://your-app.streamlit.app -->
 
 ## Assets covered
 
-| Asset | Ticker (Yahoo Finance) | Type |
-|---|---|---|
-| CAC 40 | `^FCHI` | Equity index |
-| Société Générale | `GLE.PA` | Equity |
-| BNP Paribas | `BNP.PA` | Equity |
-| Gold | `GC=F` | Front-month futures (COMEX) |
+|Asset|Ticker (Yahoo Finance)|Type|
+|-|-|-|
+|CAC 40|`^FCHI`|Equity index|
+|Société Générale|`GLE.PA`|Equity|
+|BNP Paribas|`BNP.PA`|Equity|
+|Gold|`GC=F`|Front-month futures (COMEX)|
 
 ## Features
 
-- **Data pipeline**: one year of daily closing prices downloaded with `yfinance`, with explicit column mapping to keep asset order consistent.
-- **Log returns**: daily log returns, `ln(P_t / P_{t-1})`.
-- **Rolling volatility**: 30-day rolling standard deviation of log returns, annualised with √252.
-- **Cumulative performance**: relative performance of each asset over the period.
-- **Correlation heatmap**: pairwise correlation matrix of daily log returns.
+* **Data pipeline**: one year of daily closing prices downloaded with `yfinance`, with explicit column mapping to keep asset order consistent.
+* **Log returns**: daily log returns, `ln(P\_t / P\_{t-1})`.
+* **Rolling volatility**: 30-day rolling standard deviation of log returns, annualised with √252.
+* **Cumulative performance**: relative performance of each asset over the period.
+* **Correlation heatmap**: pairwise correlation matrix of daily log returns.
 
-![Rolling volatility](screenshots/volatility.png)
-![Correlation heatmap](screenshots/correlation.png)
+!\[Rolling volatility](screenshots/volatility.png)
+!\[Correlation heatmap](screenshots/correlation.png)
 
 ## Methodology
 
@@ -35,11 +36,11 @@ Interactive Streamlit dashboard that analyses performance, volatility and correl
 
 ## Limitations
 
-- **Normality**: empirical returns show fat tails and skewness; volatility alone understates tail risk.
-- **Correlation is not stable**: estimated over one year, it can change sharply in stress periods, when correlations between risky assets tend to rise.
-- **Calendar mismatch**: gold futures and Euronext equities do not share the same trading days; only common trading days are kept before computing returns.
-- **Non-synchronous closes**: Paris closes at 17:30 CET while gold futures settle in New York hours, so daily returns are not measured at the same moment. This tends to bias the estimated gold/equity correlation towards zero.
-- **Gold proxy**: `GC=F` is a front-month futures contract, not spot gold, so the series can be affected by contract rolls.
+* **Normality**: empirical returns show fat tails and skewness; volatility alone understates tail risk.
+* **Correlation is not stable**: estimated over one year, it can change sharply in stress periods, when correlations between risky assets tend to rise.
+* **Calendar mismatch**: gold futures and Euronext equities do not share the same trading days; only common trading days are kept before computing returns.
+* **Non-synchronous closes**: Paris closes at 17:30 CET while gold futures settle in New York hours, so daily returns are not measured at the same moment. This tends to bias the estimated gold/equity correlation towards zero.
+* **Gold proxy**: `GC=F` is a front-month futures contract, not spot gold, so the series can be affected by contract rolls.
 
 ## Run locally
 
@@ -47,7 +48,7 @@ Interactive Streamlit dashboard that analyses performance, volatility and correl
 git clone https://github.com/bapt247/Market-analytics-dashboard.git
 cd Market-analytics-dashboard
 python -m pip install -r requirements.txt
-python -m streamlit run Dashboard_2.0.py
+python -m streamlit run Dashboard\_2.0.py
 ```
 
 ## Tech stack
@@ -56,10 +57,11 @@ Python, pandas, NumPy, yfinance, Matplotlib, Seaborn, Streamlit
 
 ## Possible extensions
 
-- Value at Risk (historical and parametric)
-- Simple systematic strategy backtest
+* Value at Risk (historical and parametric)
+* Simple systematic strategy backtest
 
 ## Author
 
 Baptiste Durosoy, engineering student at ESILV
-[LinkedIn](https://www.linkedin.com/in/<your-profile>)
+[LinkedIn](https://www.linkedin.com/in/baptiste-durosoy/)
+
