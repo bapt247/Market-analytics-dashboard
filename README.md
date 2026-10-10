@@ -37,16 +37,17 @@ Interactive Streamlit dashboard that analyses performance, volatility and correl
 
 - **Normality**: empirical returns show fat tails and skewness; volatility alone understates tail risk.
 - **Correlation is not stable**: estimated over one year, it can change sharply in stress periods, when correlations between risky assets tend to rise.
-- **Calendar mismatch**: gold futures and Euronext equities do not share the same trading days; dates are aligned before computing returns.
+- **Calendar mismatch**: gold futures and Euronext equities do not share the same trading days; only common trading days are kept before computing returns.
+- **Non-synchronous closes**: Paris closes at 17:30 CET while gold futures settle in New York hours, so daily returns are not measured at the same moment. This tends to bias the estimated gold/equity correlation towards zero.
 - **Gold proxy**: `GC=F` is a front-month futures contract, not spot gold, so the series can be affected by contract rolls.
 
 ## Run locally
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/bapt247/Market-analytics-dashboard.git
+cd Market-analytics-dashboard
 python -m pip install -r requirements.txt
-python -m streamlit run app.py
+python -m streamlit run Dashboard_2.0.py
 ```
 
 ## Tech stack

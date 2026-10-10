@@ -22,7 +22,9 @@ mapping = { tickers_code : nom for nom, tickers_code in tickers.items() }
 def load_data():
     df = yf.download(list(tickers.values()), period ='1y')['Close']
     df = df.rename(columns = mapping)
+    df = df.dropna()
     return df
+    
 
 data = load_data()
 
