@@ -4,9 +4,7 @@ Interactive Streamlit dashboard that analyses performance, volatility and correl
 
 !\[Dashboard overview](screenshots/overview.png)
 
-<!-- Optional: add a live link once deployed on Streamlit Community Cloud -->
-
-<!-- \*\*Live demo:\*\* https://your-app.streamlit.app -->
+  **Live demo:** https://durosoy-market-dashboard.streamlit.app
 
 ## Assets covered
 
